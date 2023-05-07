@@ -3,6 +3,7 @@ package org.example;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
 
+import java.net.SocketTimeoutException;
 import java.util.List;
 
 @WebService(serviceName = "PersonService",
@@ -11,8 +12,10 @@ public class PersonServiceImpl implements PersonService {
     private PersonRepository dataRepository = new PersonRepositoryImpl();
 
     @WebMethod
-    public Person getPerson(int id) throws PersonNotFoundEx {
+    public Person getPerson(int id) throws PersonNotFoundEx, InterruptedException {
         System.out.println("...called getPerson id=" + id);
+
+        Thread.sleep(1000);
         return dataRepository.getPerson(id);
     }
 

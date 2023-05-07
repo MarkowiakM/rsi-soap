@@ -1,10 +1,14 @@
 package org.example;
 
+import com.sun.xml.ws.client.BindingProviderProperties;
+import jakarta.xml.ws.BindingProvider;
+import jakarta.xml.ws.WebServiceException;
 import org.example.jaxws.server_topdown.PersonExistsEx_Exception;
 import org.example.jaxws.server_topdown.PersonNotFoundEx_Exception;
 import org.example.jaxws.server_topdown.PersonService_Service;
 
 import java.net.MalformedURLException;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.InputMismatchException;
@@ -12,6 +16,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ESClient {
+
+
     static PersonService_Service pService = new PersonService_Service();
     static org.example.jaxws.server_topdown.PersonService pServiceProxy = pService.getPersonServiceImplPort();
 
@@ -80,8 +86,15 @@ public class ESClient {
         } catch (InputMismatchException e) {
             System.out.println("Podano błędny typ.");
             getPersonMenu();
-        } catch (PersonNotFoundEx_Exception ex){
+        } catch (PersonNotFoundEx_Exception ex) {
             System.out.println(ex.getMessage());
+        } catch (WebServiceException e) {
+            Throwable cause = e.getCause();
+            if (cause instanceof SocketTimeoutException) {
+                System.out.println("The operation timed out");
+            } else {
+                System.out.println("An error occurred: " + e.getMessage());
+            }
         }
     }
 
@@ -137,6 +150,7 @@ public class ESClient {
 
         URL addr = new URL("http://localhost:8081/personservice?wsdl");
         try {
+            ((BindingProvider) pServiceProxy).getRequestContext().put(BindingProviderProperties.REQUEST_TIMEOUT, 1000);
             MyData.myInfo();
         } catch (UnknownHostException e) {
             System.out.println("Nie znaleziono hosta");

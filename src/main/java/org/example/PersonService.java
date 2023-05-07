@@ -3,12 +3,13 @@ package org.example;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
 
+import java.net.SocketTimeoutException;
 import java.util.List;
 
 @WebService
 public interface PersonService {
     @WebMethod
-    Person getPerson(int id) throws PersonNotFoundEx;
+    Person getPerson(int id) throws PersonNotFoundEx, InterruptedException;
 
     @WebMethod
     Person addPerson(int id, String name, int age) throws PersonExistsEx;
