@@ -4,6 +4,6 @@ import jakarta.xml.ws.WebFault;
 @WebFault
 public class PersonNotFoundEx extends Exception {
     public PersonNotFoundEx() {
-        super("Osoba nie istnieje");
+        super("Nie znaleziono wskazanej osoby");
     }
 }

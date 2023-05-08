@@ -26,29 +26,6 @@ public interface PersonService {
 
     /**
      * 
-     * @param arg2
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns org.example.jaxws.server_topdown.Person
-     * @throws PersonNotFoundEx_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updatePerson", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.UpdatePerson")
-    @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.UpdatePersonResponse")
-    public Person updatePerson(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        int arg2)
-        throws PersonNotFoundEx_Exception
-    ;
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns org.example.jaxws.server_topdown.Person
@@ -66,14 +43,66 @@ public interface PersonService {
 
     /**
      * 
+     * @param arg3
+     * @param arg2
+     * @param arg1
+     * @param arg0
      * @return
-     *     returns int
+     *     returns org.example.jaxws.server_topdown.Person
+     * @throws PersonNotFoundEx_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "countPersons", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.CountPersons")
-    @ResponseWrapper(localName = "countPersonsResponse", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.CountPersonsResponse")
-    public int countPersons();
+    @RequestWrapper(localName = "updatePerson", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.UpdatePerson")
+    @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.UpdatePersonResponse")
+    public Person updatePerson(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        int arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3)
+        throws PersonNotFoundEx_Exception
+    ;
+
+    /**
+     * 
+     * @param arg3
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns org.example.jaxws.server_topdown.Person
+     * @throws PersonExistsEx_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addPerson", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.AddPerson")
+    @ResponseWrapper(localName = "addPersonResponse", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.AddPersonResponse")
+    public Person addPerson(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        int arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3)
+        throws PersonExistsEx_Exception
+    ;
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<org.example.jaxws.server_topdown.Person>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllPersons", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.GetAllPersons")
+    @ResponseWrapper(localName = "getAllPersonsResponse", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.GetAllPersonsResponse")
+    public List<Person> getAllPersons();
 
     /**
      * 
@@ -95,35 +124,12 @@ public interface PersonService {
     /**
      * 
      * @return
-     *     returns java.util.List<org.example.jaxws.server_topdown.Person>
+     *     returns int
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllPersons", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.GetAllPersons")
-    @ResponseWrapper(localName = "getAllPersonsResponse", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.GetAllPersonsResponse")
-    public List<Person> getAllPersons();
-
-    /**
-     * 
-     * @param arg2
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns org.example.jaxws.server_topdown.Person
-     * @throws PersonExistsEx_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addPerson", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.AddPerson")
-    @ResponseWrapper(localName = "addPersonResponse", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.AddPersonResponse")
-    public Person addPerson(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        int arg2)
-        throws PersonExistsEx_Exception
-    ;
+    @RequestWrapper(localName = "countPersons", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.CountPersons")
+    @ResponseWrapper(localName = "countPersonsResponse", targetNamespace = "http://example.org/", className = "org.example.jaxws.server_topdown.CountPersonsResponse")
+    public int countPersons();
 
 }

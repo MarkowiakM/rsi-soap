@@ -7,12 +7,12 @@ public interface PersonRepository {
 
     Person getPerson(int id) throws PersonNotFoundEx;
 
-    Person updatePerson(int id, String name, int age) throws
+    Person updatePerson(int id, String name, int age, String email) throws
             PersonNotFoundEx;
 
     boolean deletePerson(int id) throws PersonNotFoundEx;
 
-    Person addPerson(int id, String name, int age) throws PersonExistsEx;
+    Person addPerson(int id, String name, int age, String email) throws PersonExistsEx;
 
     int countPersons();
 }

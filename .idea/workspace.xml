@@ -7,8 +7,18 @@
     <list default="true" id="110df6d0-9cf5-43fd-aa1a-4623f0917a23" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ESClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ESClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PersonExistsEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PersonExistsEx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PersonNotFoundEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PersonNotFoundEx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PersonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PersonRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PersonRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PersonService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PersonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PersonServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/jaxws/server_topdown/AddPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/jaxws/server_topdown/AddPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/jaxws/server_topdown/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/jaxws/server_topdown/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/jaxws/server_topdown/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/jaxws/server_topdown/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/jaxws/server_topdown/UpdatePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/jaxws/server_topdown/UpdatePerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/personservice.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/personservice.wsdl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +99,8 @@
       <option name="presentableId" value="Default" />
       <updated>1683042704018</updated>
       <workItem from="1683042705541" duration="9084000" />
-      <workItem from="1683464506644" duration="4661000" />
+      <workItem from="1683464506644" duration="8488000" />
+      <workItem from="1683530588644" duration="3629000" />
     </task>
     <servers />
   </component>

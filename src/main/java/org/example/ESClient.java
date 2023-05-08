@@ -7,9 +7,7 @@ import org.example.jaxws.server_topdown.PersonExistsEx_Exception;
 import org.example.jaxws.server_topdown.PersonNotFoundEx_Exception;
 import org.example.jaxws.server_topdown.PersonService_Service;
 
-import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
-import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -31,7 +29,10 @@ public class ESClient {
             String name = sc.nextLine();
             System.out.print("Podaj wiek: ");
             int wiek = sc.nextInt();
-            pServiceProxy.addPerson(id, name, wiek);
+            System.out.print("Podaj email: ");
+            sc.nextLine();
+            String email = sc.nextLine();
+            pServiceProxy.addPerson(id, name, wiek, email);
             System.out.println("Dodano osobę o id " + id);
         } catch (InputMismatchException e) {
             System.out.println("Podano błędny typ.");
@@ -51,7 +52,10 @@ public class ESClient {
             String name = sc.nextLine();
             System.out.print("Podaj wiek: ");
             int wiek = sc.nextInt();
-            pServiceProxy.updatePerson(id, name, wiek);
+            System.out.print("Podaj email: ");
+            sc.nextLine();
+            String email = sc.nextLine();
+            pServiceProxy.updatePerson(id, name, wiek, email);
             System.out.println("Zaktualizowano dane osoby o id " + id);
         } catch (InputMismatchException e) {
             System.out.println("Podano błędny typ.");
@@ -82,7 +86,7 @@ public class ESClient {
         try {
             int id = sc.nextInt();
             org.example.jaxws.server_topdown.Person person = pServiceProxy.getPerson(id);
-            System.out.println("Osoba: " + person.getFirstName() + ", wiek: " + person.getAge());
+            System.out.println("Osoba: " + person.getFirstName() + ", wiek: " + person.getAge() + ", email: " + person.getEmail());
         } catch (InputMismatchException e) {
             System.out.println("Podano błędny typ.");
             getPersonMenu();
@@ -102,7 +106,7 @@ public class ESClient {
         List<org.example.jaxws.server_topdown.Person> list = pServiceProxy.getAllPersons();
         System.out.println("Lista osób: ");
         for (org.example.jaxws.server_topdown.Person value : list) {
-            System.out.println("id: " + value.getId() +", imię: "+ value.getFirstName() + ", wiek:" + value.getAge());
+            System.out.println("id: " + value.getId() +", imię: "+ value.getFirstName() + ", wiek:" + value.getAge()  + ", email: " + value.getEmail());
         }
     }
 
@@ -146,9 +150,7 @@ public class ESClient {
         }
     }
 
-    public static void main(String[] args) throws MalformedURLException {
-
-        URL addr = new URL("http://localhost:8081/personservice?wsdl");
+    public static void main(String[] args) {
         try {
             ((BindingProvider) pServiceProxy).getRequestContext().put(BindingProviderProperties.REQUEST_TIMEOUT, 1000);
             MyData.myInfo();
